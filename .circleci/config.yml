@@ -12,7 +12,12 @@ jobs:
       - image: cimg/python:3.11
     steps:
       - checkout
-      - run: python test.py
+      - run: python test.py.
+  deploy:
+    docker:
+      - image: cimg/python:3.11
+    steps:
+      - run: echo "Deploying Successfully."
 
 workflow:
   build_and_test_deploy:
@@ -21,3 +26,9 @@ workflow:
       - test:
           requires:
             - build
+      - deploy:
+          requires:
+            - test
+          filters:
+            branches:
+              only: main
