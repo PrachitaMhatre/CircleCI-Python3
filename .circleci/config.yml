@@ -6,13 +6,13 @@ jobs:
       - image: cimg/python:3.11
     steps:
       - checkout
-      - run: python main.py
+      - run: py main.py
   test:
     docker:
       - image: cimg/python:3.11
     steps:
       - checkout
-      - run: python test.py
+      - run: py test.py
   deploy:
     docker:
       - image: cimg/python:3.11
