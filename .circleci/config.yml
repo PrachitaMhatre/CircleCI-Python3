@@ -19,7 +19,7 @@ jobs:
     steps:
       - run: echo "Deploying Successfully."
 
-workflow:
+workflows:
   build_and_test_deploy:
     jobs:
       - build
